@@ -7,6 +7,7 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && apt-get install -y \
     bash \
     curl \
+    sudo \
     wget \
     git \
     make \

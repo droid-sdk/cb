@@ -29,7 +29,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install the bot:
 RUN echo "Uploaded files:" && ls /home/stuff/
-RUN npm install
+
 
 
 # Run bot script:

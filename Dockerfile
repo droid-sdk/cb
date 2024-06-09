@@ -29,8 +29,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install the bot:
 RUN echo "Uploaded files:" && ls /home/stuff/
-RUN curl -sL https://deb.nodesource.com/setup_18.18.2 -o nodesource_setup.sh
-RUN apt install -y nodejs
 RUN npm install
 
 

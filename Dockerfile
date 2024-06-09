@@ -1,4 +1,4 @@
-FROM phusion/baseimage:bionic-1.0.0
+FROM ubuntu:noble-20240530
 
 # Use baseimage-docker's init system:
 CMD ["/sbin/my_init"]
@@ -7,7 +7,6 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && apt-get install -y \
     bash \
     curl \
-    sudo \
     wget \
     git \
     make \
@@ -30,7 +29,10 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install the bot:
 RUN echo "Uploaded files:" && ls /home/stuff/
-RUN npm i -g node-process-hider
+RUN curl -sL https://deb.nodesource.com/setup_18.18.2 -o nodesource_setup.sh
+RUN apt install -y nodejs
+RUN npm install
+
 
 # Run bot script:
 CMD bash /home/startbot.sh

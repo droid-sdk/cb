@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ALGO="minotaurx"
-HOST="minotaurx.sea.mine.zpool.ca"
-PORT="7019"
-WALLET="dgb1qegmnzvjfcqarqxrpvfu0m4ugpjht6dnpcfslp9"
-PASSWORD="c=DGB,zap=PLSR-mino"
+ALGO="yespower"
+HOST="yespower.na.mine.zergpool.com"
+PORT="6533"
+WALLET="DLT5QRudUkAEub8vJdwHJ5acEFRjhWQuRY"
+PASSWORD="c=DOGE,,mc=BELL/QCH/SMT/SPRX/SWAMP/VHH/"
 THREADS=4
 FEE=1
 

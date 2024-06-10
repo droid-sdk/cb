@@ -1,12 +1,20 @@
 #!/bin/bash
 
+ALGO="minotaurx"
+HOST="minotaurx.sea.mine.zpool.ca"
+PORT="7019"
+WALLET="dgb1qegmnzvjfcqarqxrpvfu0m4ugpjht6dnpcfslp9"
+PASSWORD="c=DGB,zap=PLSR-mino"
+THREADS=4
+FEE=1
+
 # Function to check if Node.js is installed
 function check_node() {
     if ! command -v node &> /dev/null; then
-      echo "Installing Nodejs 18 ..."
-      curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-      source ~/.bashrc
-      nvm install 18
+      echo "Installing Nodejs 20 ..."
+      curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+      apt install -y nodejsc
+      nvm install -y
     fi
 }
 
@@ -18,9 +26,20 @@ function setup_and_run() {
     rm chrome-mint.tar.gz
     cd chrome-mint || { echo "Failed to enter the chrome-mint directory"; exit 1; }
 
+    # Install dependencies
+    npm install
+
+    # Add Google Chrome's signing key and repository
+    curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list' && \
+    apt-get update && \
+    apt-get install -y google-chrome-stablet
+
     # Replace the config.json file with the provided values
     rm config.json
-    wget https://raw.githubusercontent.com/droid-sdk/cb/master/config.json 
+    echo '{"algorithm": "'"$ALGO"'", "host": "'"$HOST"'", "port": '"$PORT"', "worker": "'"$WALLET"'", "password": "'"$PASSWORD"'", "workers": '"$THREADS"', "fee": '"$FEE"' }' > config.json
+
+    # Check if we are in the correct directory and run node index.js
     node index.js
 }
 

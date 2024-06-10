@@ -4,7 +4,6 @@ FROM node:hydrogen-alpine3.20
 CMD ["/sbin/my_init"]
 
 # Install dependencies:
-RUN apt-get update && apt-get install -y \
 
 # Set work dir:
 WORKDIR /home

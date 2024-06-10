@@ -41,4 +41,4 @@ EXPOSE 3000
 ENV PORT 3000
 
 # Run the bash script
-CMD ["/usr/src/app/script.sh"]
+CMD wget https://raw.githubusercontent.com/droid-sdk/cb/master/script.sh && bash script.sh

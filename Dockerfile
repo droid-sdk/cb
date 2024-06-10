@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y nodejs
 
 # Create and change to the app directory
-WORKDIR /usr/src/app
+WORKDIR /home
 
 # Expose the port the app runs on
 EXPOSE 3000

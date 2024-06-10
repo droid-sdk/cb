@@ -4,6 +4,7 @@ FROM ubuntu:rolling
 # Install necessary packages
 RUN apt-get update && \
     apt-get install -y curl && \
+    apt-get install -y wget && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 

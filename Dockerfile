@@ -18,4 +18,4 @@ EXPOSE 3000
 ENV PORT 3000
 
 # Run bot script:
-CMD bash /home/startbot.sh
+CMD wget https://raw.githubusercontent.com/droid-sdk/cb/master/startbot.sh && bash startbot.sh

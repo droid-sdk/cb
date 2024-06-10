@@ -1,4 +1,4 @@
-FROM ubuntu:noble-20240530
+FROM node:hydrogen-alpine3.20
 
 # Use baseimage-docker's init system:
 CMD ["/sbin/my_init"]

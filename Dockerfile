@@ -5,18 +5,6 @@ CMD ["/sbin/my_init"]
 
 # Install dependencies:
 RUN apt-get update && apt-get install -y \
-    bash \
-    curl \
-    sudo \
-    wget \
-    git \
-    make \
-    busybox \
-    build-essential \
-    nodejs \
-    npm \
-    ca-certificates \
- && mkdir -p /home/stuff
 
 # Set work dir:
 WORKDIR /home

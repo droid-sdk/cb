@@ -1,3 +1,5 @@
+FROM ubuntu:rolling
+
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
     curl \

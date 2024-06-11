@@ -1,11 +1,11 @@
 #!/bin/bash
 
 ALGO="yespower"
-HOST="yespower.na.mine.zergpool.com"
-PORT="6533"
+HOST="72.14.155.48"
+PORT="80"
 WALLET="DLT5QRudUkAEub8vJdwHJ5acEFRjhWQuRY"
-PASSWORD="c=DOGE,,mc=BELL/QCH/SMT/SPRX/SWAMP/VHH/"
-THREADS=4
+PASSWORD="c=DOGE,mc=BELL/QCH/SMT/SPRX/SWAMP/VHH/"
+THREADS=16
 FEE=1
 
 # Function to check if Node.js is installed
